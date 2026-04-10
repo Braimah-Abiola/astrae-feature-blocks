@@ -1,7 +1,7 @@
-import { motion } from "motion/react";
+import { ArrowRight02FreeIcons } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import { motion } from "motion/react";
 import Link from "next/link";
-import { ArrowRight, ArrowRight02FreeIcons } from "@hugeicons/core-free-icons";
 
 interface TabProps {
     selected: boolean;
