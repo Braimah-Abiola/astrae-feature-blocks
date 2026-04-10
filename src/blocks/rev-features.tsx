@@ -30,29 +30,29 @@ const RevFeatures = () => {
     const direction = selected > prevSelected.current ? 1 : -1;
 
     return (
-        <section className="max-w-7xl mx-auto py-20 px-4">
-            <div className="w-full bg-[#212525]/60 p-12 md:p-16 rounded-2xl border border-white/5">
-                <h2 className="text-3xl font-medium text-white">
+        <section className="max-w-7xl mx-auto py-20 px-2 md:px-4">
+            <div className="w-full bg-[#212525]/60 p-6 md:p-16 rounded-2xl border border-white/5">
+                <h2 className=" text-2xl md:text-3xl text-balance font-medium text-white mt-2 md:mt-0">
                     Understand every customer &amp; track requests
                 </h2>
-                <p className="text-white font-normal opacity-70 text-base max-w-3xl mt-4">
+                <p className="text-white font-normal opacity-70 text-base max-w-3xl mt-2 md:mt-4">
                     See all your customer-facing interactions and data in one place to
                     collaborate across support, product, and GTM teams effortlessly.
                 </p>
                 <Button className="mt-4" variant="secondary">Explore Solution</Button>
 
-                <div className="relative mt-12 mb-12 rounded-2xl overflow-hidden">
+                <div className="relative mt-12 mb-12 rounded-xl md:rounded-2xl overflow-hidden">
                     <Image
                         src="/assets/feature-cover.png"
                         alt="Features backdrop"
                         width={1200}
                         height={600}
-                        className="w-full h-auto object-cover rounded-2xl"
+                        className="w-full h-auto aspect-3/2 md:aspect-video object-cover rounded-xl md:rounded-2xl"
                         priority
                     />
 
-                    <div className="absolute inset-0 flex items-center justify-center p-2.5">
-                        <div className="relative w-full h-full overflow-hidden rounded-xl">
+                    <div className="absolute inset-0 flex items-center justify-center p-2 md:p-2.5">
+                        <div className="relative w-full h-full overflow-hidden rounded-lg md:rounded-xl">
                             <AnimatePresence mode="popLayout" initial={false} custom={direction}>
                                 <motion.div
                                     key={selected}
@@ -84,7 +84,7 @@ const RevFeatures = () => {
                                         src={FEATURES[selected].image}
                                         alt={FEATURES[selected].title}
                                         fill
-                                        className="object-cover object-top rounded-xl"
+                                        className="object-cover object-top-left md:object-top rounded-lg md:rounded-xl"
                                         sizes="(max-width: 768px) 100vw, 1000px"
                                     />
                                 </motion.div>
@@ -122,13 +122,13 @@ const RevFeatures = () => {
                         }}
                     />
 
-                    <div className="flex-1 p-8 md:p-10 flex items-center relative z-10">
-                        <p className="text-white text-lg md:text-xl leading-relaxed text-balance">
-                            &ldquo;Featurebase completely changed how we work. Now <br /> everyone knows what&apos;s happening and what our <br /> customers really need.&rdquo;
+                    <div className="flex-1 p-6 md:p-10 flex items-center relative z-10">
+                        <p className="text-white text-lg md:text-xl leading-relaxed text-center md:text-start">
+                            &ldquo;Featurebase completely changed how we work. Now <br className=" hidden md:block" /> everyone knows what&apos;s happening and what our <br className=" hidden md:block" /> customers really need.&rdquo;
                         </p>
                     </div>
 
-                    <div className="flex flex-col items-end justify-center gap-2 shrink-0 text-right px-10 py-8 md:py-10 relative z-10">
+                    <div className="flex flex-col items-center md:items-end justify-center gap-2 shrink-0 text-right px-10 py-8 md:py-10 relative z-10">
                         <Image
                             src="/assets/vercel.png"
                             alt="Vercel"
@@ -136,8 +136,8 @@ const RevFeatures = () => {
                             height={24}
                             className="h-6 w-auto object-contain"
                         />
-                        <div className="flex items-center gap-4 mt-4">
-                            <div className=" flex flex-col items-end">
+                        <div className="flex flex-row-reverse md:flex-row items-center gap-4 mt-4">
+                            <div className=" flex flex-col items-start md:items-end">
                                 <span className="text-white text-base font-medium">Awni Shamah</span>
                                 <span className="text-white opacity-50 text-sm">PM at Vercel</span>
                             </div>
@@ -146,7 +146,7 @@ const RevFeatures = () => {
                                 alt="Awni Shamah"
                                 width={40}
                                 height={40}
-                                className="rounded-full mt-1"
+                                className="rounded-full"
                             />
                         </div>
                     </div>

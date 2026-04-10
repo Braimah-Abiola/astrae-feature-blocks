@@ -29,7 +29,7 @@ const Tab = ({
     return (
         <button
             onClick={() => setSelected(tabNum)}
-            className="group relative flex flex-col items-start gap-4 pl-8 pr-6 py-6 text-left transition-all duration-300 cursor-pointer"
+            className="group relative flex flex-col items-start gap-2.5 md:gap-4 pl-6 md:pl-8 pr-6 py-6 text-left transition-all duration-300 cursor-pointer"
         >
             <div className="absolute left-0 top-6 bottom-6 w-px rounded-full bg-white/5" />
 
@@ -42,22 +42,23 @@ const Tab = ({
                     onAnimationComplete={onComplete}
                 />
             )}
+            <div className="flex flex-row md:flex-col items-center md:items-start gap-2.5 md:gap-4">
+                <span
+                    className={`flex items-center justify-center md:rounded-lg md:border md:p-2.5 transition-all duration-300 ${selected
+                        ? "md:border-[#7FEE64]/30 md:bg-[#7FEE64]/10 text-[#7FEE64]"
+                        : "md:border-white/10 md:bg-white/5 text-white/40 md:group-hover:border-white/20 md:group-hover:text-white/60"
+                        }`}
+                >
+                    <HugeiconsIcon icon={icon} size={20} />
+                </span>
 
-            <span
-                className={`flex items-center justify-center rounded-lg border p-2.5 transition-all duration-300 ${selected
-                    ? "border-[#7FEE64]/30 bg-[#7FEE64]/10 text-[#7FEE64]"
-                    : "border-white/10 bg-white/5 text-white/40 group-hover:border-white/20 group-hover:text-white/60"
-                    }`}
-            >
-                <HugeiconsIcon icon={icon} size={20} />
-            </span>
-
-            <h3
-                className={`text-lg font-medium transition-colors duration-300 ${selected ? "text-white" : "text-white/60 group-hover:text-white/80"
-                    }`}
-            >
-                {title}
-            </h3>
+                <h3
+                    className={`text-lg font-medium transition-colors duration-300 ${selected ? "text-white" : "text-white/60 group-hover:text-white/80"
+                        }`}
+                >
+                    {title}
+                </h3>
+            </div>
 
             <p
                 className={`text-base leading-relaxed transition-colors duration-300 ${selected ? "text-white/60" : "text-white/35 group-hover:text-white/50"
@@ -76,7 +77,7 @@ const Tab = ({
             >
                 Learn more
                 <span className="transition-transform duration-300 group-hover:translate-x-0.5">
-                    <HugeiconsIcon icon={ArrowRight02FreeIcons} />
+                    <HugeiconsIcon size={20} icon={ArrowRight02FreeIcons} />
                 </span>
             </Link>
         </button>
